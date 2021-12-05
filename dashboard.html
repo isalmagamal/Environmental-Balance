@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>التوازن البيئي</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!--style css-->
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    
+<!---fontawesome--->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/all.css">
+
+<!---google-font--->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<!--bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!---owl-carousel---->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+<!----google-fonts---->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+<!--jquery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<!--java scripts-->
+	<script src="js/myScript.js"></script>
+	<script src="js/chart.js"></script>
+<!--	<script src="js/chart2.js"></script>-->
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+</head>
+
+
+<body>
+	<div class="container-fluid main-container">
+	<header>
+		
+	</header>
+
+  <div class="row dashboard-container">
+      <div id="right-sidebar" class="tabs-container col-4 right-sidebar-open">
+            <div class="tab">
+                <div class="controlpanel">
+                    <p>لوحة التحكم</p>
+                    <i id="hamburger-icon" class="fas fa-bars"></i>
+                </div>
+                <button class="tablinks" onclick="opentab(event, 'statics')" id="defaultOpen">
+                    <div class="extra-div"></div>
+                    <p class="statics-p">
+                  الاحصائيات
+                </p>
+                </button>
+              <button class="tablinks" onclick="opentab(event, 'new-orders')">
+                    <div class="extra-div"></div>
+                  <p class="orders-p">
+                  العروض الجديدة
+                </p>
+                </button>
+                
+            <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <div class="extra-div"></div>
+                    <h4  data-toggle="collapse" href="#collapse1" class="panel-title">
+                      <a class="management-p" >الادارة</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse">
+                    <ul class="list-group sub-tabs">
+                      <li class="list-group-item">
+                        <button class="tablinks" onclick="opentab(event, 'management-info')">
+                        <div class="extra-div"></div>
+                          <p>
+                          تسجيل بيانات الإدارة
+                        </p>
+                        </button>
+                    </li>
+                        
+                      <li class="list-group-item">
+                          <button class="tablinks" onclick="opentab(event, 'jobs-names')">
+                            <div class="extra-div"></div>
+                          <p>
+                          تسجيل أسماء الوظائف
+                        </p>
+                        </button>
+                    </li>
+                        
+                      <li class="list-group-item"> 
+                        <button class="tablinks" onclick="opentab(event, 'employees-info')">
+                            <div class="extra-div"></div>
+                          <p>
+                          تسجيل بيانات الموظفين
+                        </p>
+                        </button>
+                    </li>
+                        
+                    </ul>
+                  </div>
+                </div>
+             </div>
+          
+                
+            <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <div class="extra-div"></div>
+                    <h4  data-toggle="collapse" href="#collapse2" class="panel-title">
+                      <a class="settings-p" >الاعدادات</a>
+                    </h4>
+                  </div>
+                  <div id="collapse2" class="panel-collapse collapse">
+                    <ul class="list-group sub-tabs">
+                      <li class="list-group-item">
+                        <button class="tablinks" onclick="opentab(event, 'all-management-info')">
+                        <div class="extra-div"></div>
+                          <p>
+                           بيانات الإدارة
+                        </p>
+                        </button>
+                    </li>
+                        
+                      <li class="list-group-item">
+                          <button class="tablinks" onclick="opentab(event, 'all-jobs-names')">
+                            <div class="extra-div"></div>
+                          <p>
+                          بيانات الوظائف
+                        </p>
+                        </button>
+                    </li>
+                        
+                      <li class="list-group-item"> 
+                        <button class="tablinks" onclick="opentab(event, 'all-employees-info')">
+                            <div class="extra-div"></div>
+                          <p>
+                          بيانات الموظفين
+                        </p>
+                        </button>
+                    </li>
+                        
+                    </ul>
+                  </div>
+                </div>
+             </div>
+
+              <button class="tablinks sign-out" onclick="opentab(event, 'logout')">
+                    <div class="extra-div"></div>
+                  <p class="signout-p">
+                  تسجيل خروج
+                </p>
+                </button>
+            </div>
+          <!----tab-------->
+        </div>
+      <!----end-of-right-side-tabs------>
+      
+         <div id="sidebar-content" class="tabs-content-container col-8 left-container-width1">
+             <div class="navbar">
+                 <div class="container navbar-inner ">
+                 <div class="personal-info-wrap col-md-4">
+                    <div class="admin-info">
+                    <img class="personal-avatar">
+                    <p class="name">أحمد رفعت</p>
+                     </div>
+                     <i class="fas fa-cog"></i>
+                    <i class="fas fa-bell"></i>
+                 </div>
+                 
+                 <div class="search-wrap col-md-8"><form class="navbar-form" action="/action_page.php">
+                  <div class="input-group dashboard-search">
+                    <input type="text" class="form-control" placeholder="عن ماذا تبحث.....؟" name="search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                     </form></div>
+                 </div><!----navbar-inner---->
+             </div>
+             <!-----navbar----->
+             
+             
+            <div id="statics" class="tabcontent"> 
+                <div class="container statics-div">
+                    <div class="row">
+                        <div class="col-lg-4 orders-wrap">
+                        <div class="orders-info order-bg-blue">كل العروض</div>
+                        <div class="orders-info order-no-bg">150 عرض</div>
+                        </div>
+                         <div class="col-lg-4 orders-wrap">
+                        <div class="orders-info order-bg-green">العروض المقبولة</div>
+                        <div class="orders-info order-no-bg ">100 عرض</div>
+                        </div>
+                      <div class="col-lg-4 orders-wrap">
+                        <div class="orders-info order-bg-red">العروض المرفوضة</div>
+                        <div class="orders-info order-no-bg">50 عرض</div>
+                    </div> 
+                    </div>
+                    
+                    <div class="row row3">
+                        <div class="col-lg-4 orders-info order-no-bg row3-order">القيمة الإجمالية للعروض</div>
+                        <div class="col-lg-8 orders-info order-no-bg row3-order row3-order2">
+                            <p>بيانات المشاريع المنجزة</p>
+                            <p>آخر 30 يوم</p>
+                            
+                        </div>
+                    </div> 
+                    <div class="row row4">
+                        <div class="col-lg-4 row4-div1">
+                            <div class="orders-info order-no-bg price-dashboard">16000 ريال</div>
+                            <div class="chart2-wrap">
+                                <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+                            </div>                      
+                        </div>
+                        <div class="col-lg-8 orders-info order-no-bg row3-order row3-order2 chart-wrap">
+ 
+                           <canvas id="ctx"></canvas>
+<!--                           <canvas id="ctx"></canvas>-->
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <!----end-of-statics----->
+
+            <div id="new-orders" class="tabcontent">
+                <div class="container new-orders-inner">
+                    <div class="row">
+                        <div class="col-lg-8 new-orders-container">
+                            <div class="dashboard-order-outer-container">
+                            <div class="dashboard-order">
+                                <p class="service-name-dashboard">قياس جودة الهواء - إنشاء شاطئ</p>
+                                <p class="show-details">
+                                    اظهار التفاصيل
+                                <img class="show-details-arrow" src="img/down-arrow.png">
+                                </p>
+                            </div>
+                            <div class="dashboard-orders-wrap">
+                                    <div class="order-details-dashboard client-full-name">
+                                        <p class="dashboard-name">أحمد</p>
+                                        <p class="dashboard-name">رفعت</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="client-number-dashboard">+966 352 32 3254</p>
+                                    </div> 
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="dashboard-info-email">refaatahmed729@gmail.com</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p>الرياض</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard services-select">
+                                        <p class='chosen-service'>قياس جودة التربة</p>
+                                        <p class='chosen-service'>انقاذ شاطئ</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard details-and-file">
+                                        <p>التفاصيل</p>
+                                        <div class="dashboard-signup-files">
+                                <label for="upload-file" class="">الملفات المرفقه <i class="fas fa-paperclip"></i></label>
+                                <input type="file" name="photo" id="upload-file" /></div> 
+                                    </div>
+                                
+                                    <div class="order-details-dashboard dashboard-buttons-wrap">
+                                        <button type="button" class="btn accept-order">الموافقة على الطلب</button>
+                                        <button type="button" class="btn refuse-order">رفض الطلب</button>
+
+                                    </div>
+                                
+                                </div>  
+                            </div>
+                            
+                            <div class="dashboard-order-outer-container">
+                            <div class="dashboard-order">
+                                <p class="service-name-dashboard">قياس جودة الهواء - إنشاء شاطئ</p>
+                                <p class="show-details">
+                                    اظهار التفاصيل
+                                <img class="show-details-arrow" src="img/down-arrow.png">
+                                </p>                            </div>
+                            <div class="dashboard-orders-wrap">
+                                    <div class="order-details-dashboard client-full-name">
+                                        <p class="dashboard-name">أحمد</p>
+                                        <p class="dashboard-name">رفعت</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="client-number-dashboard">+966 352 32 3254</p>
+                                    </div> 
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="dashboard-info-email">refaatahmed729@gmail.com</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p>الرياض</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard services-select">
+                                        <p class='chosen-service'>قياس جودة التربة</p>
+                                        <p class='chosen-service'>انقاذ شاطئ</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard details-and-file">
+                                        <p>التفاصيل</p>
+                                        <div class="dashboard-signup-files">
+                                <label for="upload-file" class="">الملفات المرفقه <i class="fas fa-paperclip"></i></label>
+                                <input type="file" name="photo" id="upload-file" /></div> 
+                                    </div>
+                                
+                                    <div class="order-details-dashboard dashboard-buttons-wrap">
+                                        <button type="button" class="btn accept-order">الموافقة على الطلب</button>
+                                        <button type="button" class="btn refuse-order">رفض الطلب</button>
+
+                                    </div>
+                                </div>  
+                            </div>
+                            
+                            <div class="dashboard-order-outer-container">
+                            <div class="dashboard-order">
+                                <p class="service-name-dashboard">قياس جودة الهواء - إنشاء شاطئ</p><p class="show-details">
+                                    اظهار التفاصيل
+                                <img class="show-details-arrow" src="img/down-arrow.png">
+                                </p>
+                            </div>
+                            <div class="dashboard-orders-wrap">
+                                    <div class="order-details-dashboard client-full-name">
+                                        <p class="dashboard-name">أحمد</p>
+                                        <p class="dashboard-name">رفعت</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="client-number-dashboard">+966 352 32 3254</p>
+                                    </div> 
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="dashboard-info-email">refaatahmed729@gmail.com</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p>الرياض</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard services-select">
+                                        <p class='chosen-service'>قياس جودة التربة</p>
+                                        <p class='chosen-service'>انقاذ شاطئ</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard details-and-file">
+                                        <p>التفاصيل</p>
+                                        <div class="dashboard-signup-files">
+                                <label for="upload-file" class="">الملفات المرفقه <i class="fas fa-paperclip"></i></label>
+                                <input type="file" name="photo" id="upload-file" /></div> 
+                                    </div>
+                                
+                                    <div class="order-details-dashboard dashboard-buttons-wrap">
+                                        <button type="button" class="btn accept-order">الموافقة على الطلب</button>
+                                        <button type="button" class="btn refuse-order">رفض الطلب</button>
+
+                                    </div>
+                                </div>  
+                            </div>
+                            
+                            <div class="dashboard-order-outer-container">
+                            <div class="dashboard-order">
+                                <p class="service-name-dashboard">قياس جودة الهواء - إنشاء شاطئ</p><p class="show-details">
+                                    اظهار التفاصيل
+                                <img class="show-details-arrow" src="img/down-arrow.png">
+                                </p>
+                            </div>
+                            <div class="dashboard-orders-wrap">
+                                    <div class="order-details-dashboard client-full-name">
+                                        <p class="dashboard-name">أحمد</p>
+                                        <p class="dashboard-name">رفعت</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="client-number-dashboard">+966 352 32 3254</p>
+                                    </div> 
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p class="dashboard-info-email">refaatahmed729@gmail.com</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard">
+                                        <p>الرياض</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard services-select">
+                                        <p class='chosen-service'>قياس جودة التربة</p>
+                                        <p class='chosen-service'>انقاذ شاطئ</p>
+                                    </div>
+                                    
+                                    <div class="order-details-dashboard details-and-file">
+                                        <p>التفاصيل</p>
+                                        <div class="dashboard-signup-files">
+                                <label for="upload-file" class="">الملفات المرفقه <i class="fas fa-paperclip"></i></label>
+                                <input type="file" name="photo" id="upload-file" /></div> 
+                                    </div>
+                                
+                                    <div class="order-details-dashboard dashboard-buttons-wrap">
+                                        <button type="button" class="btn accept-order">الموافقة على الطلب</button>
+                                        <button type="button" class="btn refuse-order">رفض الطلب</button>
+
+                                    </div>
+                                </div>  
+                            </div>
+                            
+
+                        </div>
+                        <div class="col-lg-4"></div>
+                    </div>
+
+                </div>
+            <!----end of new- orders inner------>
+
+             </div>
+             <!----end of new- orders------>
+    
+             
+
+            <div id="management-info" class="tabcontent">
+                <div class="manegment-div row">
+                    <div class="col-lg-7 dashboard-col">
+                     <div id="management-select" class="form1-select manegment-select">
+                              <select>
+                               <option value="0">اختر الادارة</option>
+                                <option value="1">إدارة 1</option>
+                                <option value="2">إدارة 2</option>
+                                <option value="3">إدارة 3</option>
+                                <option value="4">إدارة 4</option>
+                                <option value="5">إدارة 5</option>
+                              </select>
+                         </div>
+                               <div class="login-form-form-group dashboard-col input-dashboard">
+                                <input class="input-field" type="text" placeholder="اسم الإدارة" required>
+                              </div>
+                          <div class="order-details-dashboard management-details">
+                              <textarea class="form-control" rows="4" placeholder="تفاصيل مهمة الإدارة"></textarea>
+                        </div>
+                        <button type="button" class="btn save-data">حفظ البيانات</button>
+                         <div class="row"> 
+                               <div class="col-lg-6 dashboard-col">
+                        <button type="button" class="btn add-new-btn"> إضافة إدارة جديدة
+                                   <img class="plus-icon-btn" src="img/plus.png"></button>
+                                </div></div> 
+                    </div>
+                    <div class="col-lg-5"></div>
+
+                </div>
+            </div>
+                   <!----end of management------>
+
+             
+             
+              
+
+            <div id="jobs-names" class="tabcontent">
+                     <div class="manegment-div row">
+                    <div class="col-lg-7 dashboard-col">
+                     <div id="jobs-select" class="form1-select jobs-select">
+                              <select>
+                               <option value="0">اختر الوظيفة</option>
+                                <option value="1">الوظيفة الأولى</option>
+                                <option value="2">الوظيفة الثانيه </option>
+                                <option value="3">الوظيفة الثالثة </option>
+                                <option value="4">الوظيفة الرابعة </option>
+                              </select>
+                         </div>
+                          <div class="login-form-form-group dashboard-col input-dashboard input-dashboard-job">
+                                <input class="input-field" type="text" placeholder="الوظيفة">
+                                <input class="input-field" type="text" placeholder="الإدارة">
+                              </div>
+                          <div class="login-form-form-group dashboard-col input-dashboard input-dashboard-job">
+                                <input class="input-field" type="text" placeholder="الشخص المسؤول">
+                                <input class="input-field" type="text" placeholder="الجنسية">
+                              </div>
+                        <div class="login-form-form-group dashboard-col">
+                                <input class="input-field" type="text" placeholder="رقم الهوية" required>
+                        </div>
+                        <div class="login-form-form-group dashboard-col">
+                                <input class="input-field" type="text" placeholder="مكان الاقامة" required>
+                        </div>
+                          
+                        <button type="button" class="btn save-data">حفظ البيانات</button>
+                         <div class="row"> 
+                               <div class="col-lg-6 dashboard-col">
+                        <button type="button" class="btn add-new-btn"> إضافة وظيفة جديدة
+                                   <img class="plus-icon-btn" src="img/plus.png"></button>
+                                </div></div> 
+                    </div>
+                    <div class="col-lg-5"></div>
+
+                </div>
+  
+            </div>
+             
+             
+             
+
+            <div id="employees-info" class="tabcontent">
+                       <div class="manegment-div row">
+                    <div class="col-lg-7 dashboard-col">
+                     <div id="jobs-select" class="form1-select jobs-select">
+                              <select>
+                               <option value="0">اختر اسم الموظف</option>
+                                <option value="1">الموظف الأول</option>
+                                <option value="2">الموظف الثاني </option>
+                                <option value="3">الموظف الثالث </option>
+                                <option value="4">الموظف الرابع </option>
+                              </select>
+                         </div>
+                          <div class="login-form-form-group dashboard-col input-dashboard input-dashboard-job">
+                                <input class="input-field" type="text" placeholder="اسم الموظف">
+                                <input class="input-field" type="text" placeholder="السن">
+                              </div>
+                          <div class="login-form-form-group dashboard-col input-dashboard input-dashboard-job">
+                                <input class="input-field" type="text" placeholder="الوظيفة">
+                                <input class="input-field" type="text" placeholder="الجنسية">
+                              </div>
+                        <div class="login-form-form-group dashboard-col">
+                                <input class="input-field" type="text" placeholder="رقم الهوية" required>
+                        </div>
+                        <div class="login-form-form-group dashboard-col">
+                                <input class="input-field" type="text" placeholder="مكان الاقامة" required>
+                        </div>
+                          
+                        <button type="button" class="btn save-data">حفظ البيانات</button>
+                         <div class="row"> 
+                               <div class="col-lg-6 dashboard-col">
+                        <button type="button" class="btn add-new-btn"> إضافة موظف جديد
+                                   <img class="plus-icon-btn" src="img/plus.png"></button>
+                                </div></div> 
+                    </div>
+                    <div class="col-lg-5"></div>
+
+                </div>
+            </div>
+             
+             
+             
+             
+<!--
+            <div id="settings" class="tabcontent">
+                <div class="settings-inner">
+                    <h1>الاعدادات</h1>
+                </div>
+            </div>
+-->
+            <div id="all-management-info" class="tabcontent">
+                <div class="manegment-div row">
+                    <div class="before-table-div">
+                    <h2 class="table-tab-name">بيانات الادارة</h2>
+                    </div>
+                    
+                    <div class="pre-table-div">
+                      <div id="management-select" class="form1-select manegment-select show-select">
+                              <select>
+                               <option value="0">اظهار</option>
+                                <option value="1">3</option>
+                                <option value="2">5</option>
+                                <option value="3">10</option>
+                                <option value="4">15</option>
+                                <option value="5">20</option>
+
+                              </select>
+                         </div>
+                        <div class="tables-search-container">
+                        <div class="input-group tables-search">
+                        <input type="text" class="form-control tables-search-input" placeholder="ابحث عن..." name="search">
+                        <div class="input-group-btn tables-search-wrap">
+                          <button class="btn btn-default tables-search-button" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </div>
+                            </div></div>
+                    </div>
+                     <div class="table-wrap"  style="overflow-x: auto;">
+                    <table id="dashboard-table">
+                      <tr>
+                        <th>ID</th>
+                        <th>الاسم الأول</th>
+                        <th>الأسم الثاني</th>
+                        <th>رقم الهاتف</th>
+                        <th>البريد الالكتروني</th>
+                        <th>الوظيفة</th>
+                        <th>تعديل/حذف</th>
+                      </tr>
+                        
+                      <tr>
+                        <th>1</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>2</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>3</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+
+                    </table>
+
+                     <nav aria-label="Page navigation example">
+                  <ul class="pagination" style="direction: ltr;">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+           
+            </div>
+             </div>
+             </div>
+             
+                      
+
+            <div id="all-jobs-names" class="tabcontent">
+                     <div class="manegment-div row">
+                   <div class="before-table-div">
+                    <h2 class="table-tab-name">بيانات الوظائف</h2>
+                    </div>
+                   <div class="pre-table-div">
+                      <div id="management-select" class="form1-select manegment-select show-select">
+                              <select>
+                               <option value="0">اظهار</option>
+                                <option value="1">3</option>
+                                <option value="2">5</option>
+                                <option value="3">10</option>
+                                <option value="4">15</option>
+                                <option value="5">20</option>
+
+                              </select>
+                         </div>
+                        <div class="tables-search-container">
+                        <div class="input-group tables-search">
+                        <input type="text" class="form-control tables-search-input" placeholder="ابحث عن..." name="search">
+                        <div class="input-group-btn tables-search-wrap">
+                          <button class="btn btn-default tables-search-button" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </div>
+                            </div></div>
+                    </div>
+                     <div class="table-wrap"  style="overflow-x: auto;">
+                    <table id="dashboard-table">
+                      <tr>
+                        <th>ID</th>
+                        <th>الاسم الأول</th>
+                        <th>الأسم الثاني</th>
+                        <th>رقم الهاتف</th>
+                        <th>البريد الالكتروني</th>
+                        <th>الوظيفة</th>
+                        <th>تعديل/حذف</th>
+                      </tr>
+                        
+                      <tr>
+                        <th>1</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>2</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>3</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+
+                    </table>
+
+                     <nav aria-label="Page navigation example">
+                  <ul class="pagination" style="direction: ltr;">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+           
+
+                </div>
+                </div>
+            </div>
+             
+             
+             
+
+            <div id="all-employees-info" class="tabcontent">
+                       <div class="manegment-div row">
+                   <div class="before-table-div">
+                    <h2 class="table-tab-name">بيانات الموظفين</h2>
+                    </div>
+                    <div class="pre-table-div">
+                      <div id="management-select" class="form1-select manegment-select show-select">
+                              <select>
+                               <option value="0">اظهار</option>
+                                <option value="1">3</option>
+                                <option value="2">5</option>
+                                <option value="3">10</option>
+                                <option value="4">15</option>
+                                <option value="5">20</option>
+
+                              </select>
+                         </div>
+                        <div class="tables-search-container">
+                        <div class="input-group tables-search">
+                        <input type="text" class="form-control tables-search-input" placeholder="ابحث عن..." name="search">
+                        <div class="input-group-btn tables-search-wrap">
+                          <button class="btn btn-default tables-search-button" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </div>
+                            </div></div>
+                    </div>
+                     <div class="table-wrap"  style="overflow-x: auto;">
+                    <table id="dashboard-table">
+                      <tr>
+                        <th>ID</th>
+                        <th>الاسم الأول</th>
+                        <th>الأسم الثاني</th>
+                        <th>رقم الهاتف</th>
+                        <th>البريد الالكتروني</th>
+                        <th>الوظيفة</th>
+                        <th>تعديل/حذف</th>
+                      </tr>
+                        
+                      <tr>
+                        <th>1</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>2</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+                        
+                        <tr>
+                        <th>3</th>
+                        <th>محمود</th>
+                        <th>علي</th>
+                        <th>+201082244468</th>
+                        <th>Mahmoud@gmail.com</th>
+                        <th>الوظيفة</th>
+                    <th>  
+                           <div class="editing-buttons">
+                            <i class="fas fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                            </div>
+                           </th>
+                      </tr>
+
+                    </table>
+
+                     <nav aria-label="Page navigation example">
+                  <ul class="pagination" style="direction: ltr;">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+           
+
+                </div>
+
+                </div>
+            </div>
+             
+             
+            </div>
+      <!-----end-of-left-tabs-content----->
+
+            </div>
+    </div>  
+<!--    </div>-->
+
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+  
+ <script>    
+    $('#hamburger-icon').on('click', function(e) {
+      $('#right-sidebar').toggleClass("right-sidebar-open right-sidebar-closed");
+      $('#sidebar-content').toggleClass("left-container-width1 left-container-width2"); 
+
+      e.preventDefault();
+    });  
+</script>
+    
+<script>
+Chart.defaults.font.size = 12;
+Chart.defaults.font.family = 'Cairo';
+var xValues = ["المشاريع المنجزة", "المشاريع المرفوضة", "المشاريع المنتظرة", "مشاريع قيد الانجاز"];
+var yValues = [45, 25, 10, 15];
+var barColors = [
+  "#406343",
+  "#D85B5B",
+  "#D1D1D1",
+  "#52699E",
+];
+
+new Chart("myChart2", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+    },
+    responsive: true,
+     plugins: {
+      legend: {
+          display: true,
+          position:'right',
+          labels:{
+          boxWidth:10,
+          boxHeight:10,
+           borderWidth: 0,
+              
+          }
+      }
+    }
+  }
+});
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+
+</body>
+</html>
