@@ -830,12 +830,13 @@ i.fas.fa-paperclip {
 }
 .container-fluid.login-section.admin-login {
     height: 100vh;
-    background-image: linear-gradient(rgb(0 0 0 / 0),rgb(0 0 0 / 65%)), url(../img/admin-bg.png);
+/*    background-image: linear-gradient(rgb(0 0 0 / 0),rgb(0 0 0 / 65%)), url(../img/admin-bg.png);*/
+    background-image: url(../img/new-bg.png);
     position: relative;
 
 }
 .admin-login-container {
-    background-color: #32502ed1;
+    background-color: #9394aeb5;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -846,12 +847,27 @@ i.fas.fa-paperclip {
     max-height: unset;
     position: relative;
 }
+.col-lg-8.login-form-container.admin-register-container {
+    padding: 50px !important;
+}
 h1.login-h1.admin-login {
     color: #fff;
 }
 
 #admin-login .login-form-form-group {
     border-bottom: 1px solid #fff;
+}
+#admin-login .login-form-form-group.name-holder.admin-reg-name-holder {
+    border-bottom: 0;
+}
+.admin-reg-name-holder input.input-field {
+    border-bottom: 1px solid #fff;
+}
+.admin-reg-name-holder input.input-field:hover, .admin-reg-name-holder input.input-field:focus{
+    border-bottom: 1px solid #fff;
+}
+button.btn.btn-default.login-form-btn.admin-reg-btn {
+    width: 215px;
 }
 #admin-login input.input-field {
     color: #fff;
@@ -864,6 +880,14 @@ h1.login-h1.admin-login {
 }
 #admin-login button.btn.btn-default.login-form-btn {
     border: 1px solid#fff;    
+    background-color: #05db8f96;
+}
+#admin-login button.btn.btn-default.login-form-btn:hover {
+    border: 1px solid#fff;    
+    background-color: #FF7810;
+}
+#admin-login button.btn.btn-default.login-form-btn:focus {
+    border: 1px solid#fff;  
     background-color: #32502e99;
 }
 .admin-login-container p.form-p {
@@ -1016,13 +1040,13 @@ i.fas.fa-bars {
 .right-sidebar-open {
     width: 20% !important ;
 }
-.right-sidebar-open .controlpanel p, .right-sidebar-open .tablinks p, .right-sidebar-open h4.panel-title{
+.right-sidebar-open .controlpanel p, .right-sidebar-open .tablinks p, .right-sidebar-open h4.panel-title, .right-sidebar-open p.settings-title{
     display: block;
 }
 .right-sidebar-closed i.fas.fa-bars {
     width: 100%;
 }
-.right-sidebar-closed .controlpanel p,.right-sidebar-closed .tablinks p, .right-sidebar-closed h4.panel-title{
+.right-sidebar-closed .controlpanel p,.right-sidebar-closed .tablinks p, .right-sidebar-closed p.settings-title, .right-sidebar-closed h4.panel-title{
     display: none;
 }
 .right-sidebar-closed{
@@ -1780,6 +1804,159 @@ position: absolute;
     min-height: 100px;
     padding: 10px 0px;
 }
+
+.tabs-content-container.tab-contents-profile.col-8 {
+    background-color: #fff;
+}
+.right-sidebar-profile.col-4.tabs-container {
+    background-color: #EEEEEE;
+}
+.row.dashboard-container.profile-dashboard {
+    background-color: #EEEEEE;
+}
+.control-panel-profile p,.control-panel-profile i.fas.fa-bars {
+    color: #000;
+}
+a.profile-a {
+    color: #000;
+}
+.profile-link {
+    color: #000 !important;
+}
+p.profile-link {
+    font-size: 14px !important;
+}
+.title-profile{
+    position: relative;
+}
+.controlpanel.control-panel-profile {
+    margin-bottom: 0px;
+}
+.panel-heading .title-profile:after {
+    content: '' !important;
+    top: -5px;
+    content: '';
+    position: absolute;
+    left: -7px;
+    background: url(../img/down-arrowblack.png);
+    background-position: center;
+    background-size: 15px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+.profile-settings-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+p.settings-title {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    display: flex;
+    margin-right: 15px;
+}
+p.profile-signout.sub-profile-link {
+    color: #B71B1B;
+}
+p.sub-profile-link {
+    color: #000;
+    font-size: 14px;
+}
+.tablinks.settings-tablinks{
+    padding-top: 0px;
+}
+
+li.list-group-item.list-group-item-profile {
+    padding: 0.5rem 1rem;
+}
+button.btn.waiting-order {
+    color: #fff;
+    background-color: #E4D612;
+    border-radius: 10px;
+    margin: 0px 10px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+button.tablinks.active p.profile-link, button.tablinks p.profile-link:hover {
+    color: #EE8C00 !important;
+}
+button.tablinks.active p.sub-profile-link, button.tablinks p.sub-profile-link:hover {
+    color: #EE8C00 !important;
+}
+.control-panel-profile i.fas.fa-bars {
+    margin-right: 7px;
+}
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.info-profile {
+    display: flex;
+    justify-content: space-between;
+}
+p.profile-name, .profile-psw {
+    color: #919191;
+    margin-bottom: 0;
+}
+button.edit-profile {
+    background-color: unset;
+    border: 0;
+    border-right: 1px solid #919191;
+    color: #919191;
+}
+.profile-name-address {
+    width: 48%;
+    border-bottom: 1px solid #B6B6B6;
+    padding-bottom: 10px;
+}
+.profile-name-address label {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.profile-address {
+    width: 100%;
+    border-bottom: 1px solid #B6B6B6;
+    padding-bottom: 10px;
+}
+.profile-address label {
+    font-weight: 500;
+}
+button.edit-profile:hover, button.edit-profile:focus  {
+    color: #EE8C00;
+}
+
+.password-profile-container label {
+    font-weight: 500;
+    border-bottom: 15px;
+}
+.password-profile-container {
+    width: 40%;
+    border-bottom: 1px solid #B6B6B6;
+    margin-bottom: 20px;
+}
+.renew-psw label {
+    font-weight: 500;
+}
+.password-profile-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.renew-psw {
+    width: 46%;
+    border-bottom: 1px solid #B6B6B6;
+    margin-bottom: 25px;
+}
+.renew-psw input.form-control {
+    color: #919191;
+    height: auto;
+}
+
+
+
+
 /*************************************Responsive***********************************/
 @media (max-width:1450px){
 h1.carousel-h1 {
@@ -1819,7 +1996,7 @@ h4 {
     font-size: 14px;
     margin-right: 0;
     }
-h4.panel-title {
+h4.panel-title, p.settings-title {
     font-size: 14px !important;
         margin-right: 0;
     }
@@ -1851,6 +2028,12 @@ h4.panel-title {
 }
 .login-logo-mobile:after {
     display: block;
+}
+.container-fluid.login-section.admin-register {
+    min-height: 780px;
+    }
+.col-lg-8.login-form-container.admin-register-container {
+    padding: 100px 20px 50px !important;
 }
 .chart-wrap {
     width: 100% !important;
@@ -2019,6 +2202,34 @@ p.show-details {
 .col-9.main-header-left {
     width: 50%;
 }
+.profile-info {
+    flex-direction: column;
+    margin-bottom: 0;
+}
+.profile-name-address {
+    width: 100%;
+    margin-bottom: 20px;
+}
+button.btn.save-data.save-profile {
+    margin-top: 35px;
+}
+p.profile-name {
+    width: 80%;
+    word-break: break-word;
+    padding: 5px;
+}
+button.edit-profile {
+    width: 20%;
+}
+.password-profile-container {
+    width: 100%;
+    }
+.password-profile-wrap {
+    flex-direction: column;
+}
+.renew-psw {
+    width: 100%;
+}
 }
 
 @media (max-width:600px){
@@ -2092,7 +2303,9 @@ h1.login-h1 {
 .controlpanel p {
     font-size: 12px;
 }
-
+.controlpanel.control-panel-profile p {
+    font-size: 14px;
+}
 .row3-order2.chart-wrap {
     overflow: scroll !important;
 }
@@ -2148,6 +2361,7 @@ i.fas.fa-cog, i.fas.fa-bell {
 }
     i#hamburger-icon {
     font-size: 20px;
+    margin-right: 13px;
 }
 button.btn.accept-order, button.btn.refuse-order, .manegment-select.form1-select .select-items div, .manegment-select.form1-select .select-selected {
     font-size: 14px;
@@ -2165,6 +2379,10 @@ button.btn.accept-order, button.btn.refuse-order, .manegment-select.form1-select
 }
 .input-group.tables-search {
     max-width: 100% !important;
+}
+.panel-heading .title-profile:after {
+  
+    left: -20px;
 }
 }
 
@@ -2267,6 +2485,9 @@ button.btn.add-new-btn{
     left: 15px;
     }
 
+.info-profile {
+    flex-direction: column;
+ }
 }
 
 
@@ -2277,6 +2498,18 @@ button.btn.add-new-btn{
 .login-logo-mobile {
     font-size: 22px;
 }
+
+
+
+}
+
+@media (max-width:350px){
+.info-profile {
+    flex-direction: column;
+}
+p.profile-name {
+    width: 100%;
+    }
 }
 
 
